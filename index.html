@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Joe Exotics Random Reptile Shopping App</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+    <div id="validation-summary">
+        <p>Errors go here.</p>
+
+    </div>
+    <form>
+        <label for="Name">Reptile Name:</label>
+        <input id="Name" type="text">
+        <br>
+
+        <label for="price">Price:</label>
+        <input id="price" type="text">
+        <br>
+
+        <label for="type">Reptile Sizes</label>
+        <select id="type">
+            <option value="">Select Reptile Size</option>
+            <option value="XXL">XXL- Largest Size Reptile</option>
+            <option value="XL">XL - Extra Large</option>
+            <option value="L">L - Large</option>
+            <option value="M">M - Medium</option>
+            <option value="S">S - Small</option>
+            <option value="XS">XS - Smallest</option>
+        </select>
+
+        <label for="venomous">Is Venomous? </label>
+        <select id="venomous">
+            <option value="">Venomous capacity</option>
+            <option value="1">Not Venomous </option>
+            <option value="2">Kinda Venomous</option>
+            <option value="3">Need Dangerous Animal License</option>        
+        </select>
+        
+
+        <input type="checkbox" id = gift>
+        <label for="gift">Is gift?</label>
+        <br>
+
+        <input type="button" value="Add reptile">
+
+        <div id="display">
+
+        </div>
+
+
+    </form>
+    <script src="ts/main.ts"></script>
+</body>
+</html>
