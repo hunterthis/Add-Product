@@ -1,11 +1,26 @@
-window.onload = function() {
-    let addButton = document.querySelector("input[type=button]");
-    HTMLElement document.querySelector("input[type=button]");
-    addButton.click = addReptile;
-    if (Element instanceof HTMLElement) {
-        addButton.click();
-      }
+class Reptile{
+    name: string;
+    Quantity: number;
 }
+
+
+window.onload = function() {
+    let addBtn 
+    = <HTMLElement>document.querySelector("input[type=button]");
+       addBtn.onclick = addReptile;
+
+}
+
 function addReptile(){
-    alert("Reptile added";)
+    alert("Reptile added");
+
+    if (isAllDataValid()) {
+        let reptile = getReptile();
+        displayReptile(reptile);
+    }
+}
+
+// ADD VALIDATION CODE*********************************** JOE DOESN'T LIKE THIS BUT ITS OK FOR NOW
+function isAllDataValid(){
+    return true;
 }
