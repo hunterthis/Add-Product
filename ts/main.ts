@@ -1,6 +1,7 @@
 class Reptile{
     name: string;
     Quantity: number;
+    venomous: number;
 }
 
 
@@ -24,3 +25,6 @@ function addReptile(){
 function isAllDataValid(){
     return true;
 }
+// Test code
+let myReptile = new Reptile();
+myReptile.name = "Godzilla"
