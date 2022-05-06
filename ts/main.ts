@@ -1,7 +1,9 @@
 class Reptile{
     name: string;
     Quantity: number;
-    venomous: number;
+    venomous: string;
+    size: string;
+    label: string;
 }
 
 
@@ -21,10 +23,47 @@ function addReptile(){
     }
 }
 
-// ADD VALIDATION CODE*********************************** JOE DOESN'T LIKE THIS BUT ITS OK FOR NOW
+//  VALIDATION CODE*********************************** 
 function isAllDataValid(){
     return true;
 }
-// Test code
+
+
+function getByID(id: string){
+    return document.getElementById(id);
+}
+
+
+
+function getReptile():Reptile{
+    // populate with data from form and return it
+    let reptile = new Reptile();
+
+    
+    let inputName = <HTMLInputElement>getByID("name");
+
+    reptile.name =   inputName.value; 
+
+    let QuantityInput = <HTMLInputElement>getByID("quantity");
+    reptile.Quantity = parseFloat(QuantityInput.value);
+
+    let sizeInput = <HTMLInputElement>getByID("size");
+    reptile.size = sizeInput.value;
+
+    let venomInput = <HTMLInputElement>getByID("venomous");
+    reptile.venomous = venomInput.value;
+
+
+
+    return Reptile;// placeholder
+}
+
+
+function displayReptile(myReptile:Reptile):void{
+    // todo display reptile data below the form
+}
+
+/* Test code
 let myReptile = new Reptile();
 myReptile.name = "Godzilla"
+*/
