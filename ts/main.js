@@ -18,7 +18,7 @@ function getReptile() {
     // populate with data from form and return it
     let reptiles = new Reptile();
     let inputName = getByID("name");
-    reptiles.name = inputName.value;
+    reptiles.name = (inputName.value);
     let QuantityInput = getByID("quantity");
     reptiles.Quantity = parseFloat(QuantityInput.value);
     let sizeInput = getByID("size");
@@ -40,27 +40,30 @@ myReptile.name = "Godzilla";
 //  VALIDATION CODE*********************************** 
 function isAllDataValid() {
     let isValid = true;
-    let name = getByID("Name").value;
-    if (name == "") {
+    let inputName = getByID("Name");
+    let inName = inputName.value;
+    if (inName == "") {
         isValid = false;
         let errorsDocumented = document.createElement("p");
         errorsDocumented.innerText = "Please name a lizard";
     }
-    let quantity = getByID("quantity").value;
-    let quantityNum = parseFloat(quantity);
-    if (quantity == "" || isNaN(quantityNum)) {
+    let quantity = getByID("quantity");
+    let quantityNum = parseFloat("quantity");
+    if (quantityNum <= 0 || isNaN(quantityNum)) {
         isValid = false;
         let errorsDocumented = document.createElement("p");
         errorsDocumented.innerText = "How many lizards would you like?";
     }
-    let type = getByID("size").value;
-    if (type == "") {
+    let size = getByID("size");
+    let sizeLizard = size.value;
+    if (sizeLizard == "") {
         isValid = false;
         let errorsDocumented = document.createElement("p");
         errorsDocumented.innerText = "Please choose a reptile size";
     }
-    let venomous = getByID("venomous").value;
-    if (venomous == "") {
+    let venomous = getByID("venomous");
+    let venomousQual = venomous.value;
+    if (venomousQual == "") {
         isValid = false;
         let errorsDocumented = document.createElement("p");
         errorsDocumented.innerText = "Please select a level of venomsity";
