@@ -62,19 +62,20 @@ function isAllDataValid() {
 
     let inputName = <HTMLInputElement>getByID("Name");
     let inName = inputName.value;
-    
     if (inName == "") {
         isValid = false;
         let errorsDocumented = document.createElement("p");
         errorsDocumented.innerText = "Please name a lizard";
     }
-    let quantity = getByID("quantity").value;
-    let quantityNum = parseFloat(quantity);
-    if (quantity == "" || isNaN(quantityNum)) {
+
+    let quantity = <HTMLInputElement>getByID("quantity")
+    let quantityNum = parseFloat("quantity");
+    if (quantityNum <= 0 || isNaN(quantityNum)) {
         isValid = false;
         let errorsDocumented = document.createElement("p");
         errorsDocumented.innerText = "How many lizards would you like?";
     }
+
     let type = getByID("size").value;
     if (type == "") {
         isValid = false;
