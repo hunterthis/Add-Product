@@ -83,9 +83,9 @@ function isAllDataValid() {
         let errorsDocumented = document.createElement("p");
         errorsDocumented.innerText = "Please choose a reptile size";
     }
-    let venomous = getByID("venomous")
+    let venomous = <HTMLInputElement>getByID("venomous");
     let venomousQual = venomous.value;
-    if (venomous == "") {
+    if (venomousQual == "") {
         isValid = false;
         let errorsDocumented = document.createElement("p");
         errorsDocumented.innerText = "Please select a level of venomsity";
