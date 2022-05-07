@@ -3,7 +3,7 @@ class Reptile{
     Quantity: number;
     venomous: string;
     size: string;
-    label: string;
+
 }
 
 
@@ -15,55 +15,76 @@ window.onload = function() {
 }
 
 function addReptile(){
-    alert("Reptile added");
-
+ 
     if (isAllDataValid()) {
-        let reptile = getReptile();
-        displayReptile(reptile);
+        let reptileAll = getReptile();
+        displayReptile(reptileAll);
     }
 }
-
-//  VALIDATION CODE*********************************** 
-function isAllDataValid(){
-    return true;
-}
-
 
 function getByID(id: string){
     return document.getElementById(id);
 }
 
-
-
 function getReptile():Reptile{
     // populate with data from form and return it
-    let reptile = new Reptile();
-
-    
+    let reptiles = new Reptile();
     let inputName = <HTMLInputElement>getByID("name");
-
-    reptile.name =   inputName.value; 
-
+    reptiles.name =   (inputName.value); 
     let QuantityInput = <HTMLInputElement>getByID("quantity");
-    reptile.Quantity = parseFloat(QuantityInput.value);
-
+    reptiles.Quantity = parseFloat(QuantityInput.value);
     let sizeInput = <HTMLInputElement>getByID("size");
-    reptile.size = sizeInput.value;
-
+    reptiles.size = sizeInput.value;
     let venomInput = <HTMLInputElement>getByID("venomous");
-    reptile.venomous = venomInput.value;
-
-
-
-    return Reptile;// placeholder
+    reptiles.venomous = venomInput.value;
+    return reptiles;
 }
 
 
 function displayReptile(myReptile:Reptile):void{
-    // todo display reptile data below the form
+    let displayReptile = <HTMLInputElement>getByID("display");
+    let reptileHeading = document.createElement("h2");
+    reptileHeading.innerText = displayReptile.name;
+    let reptileInfo = document.createElement("p");
+    let reptileSizeDisplay = document.createElement("p")
+    displayReptile.appendChild(reptileInfo);
+
 }
 
-/* Test code
+
 let myReptile = new Reptile();
-myReptile.name = "Godzilla"
-*/
+myReptile.name = "Godzilla";
+
+
+//  VALIDATION CODE*********************************** 
+function isAllDataValid() {
+    let isValid = true;
+    let name = getByID("Name").value;
+    
+    if (name == "") {
+        isValid = false;
+        let errorsDocumented = document.createElement("p");
+        errorsDocumented.innerText = "Please name a lizard";
+    }
+    let quantity = getByID("quantity").value;
+    let quantityNum = parseFloat(quantity);
+    if (quantity == "" || isNaN(quantityNum)) {
+        isValid = false;
+        let errorsDocumented = document.createElement("p");
+        errorsDocumented.innerText = "How many lizards would you like?";
+    }
+    let type = getByID("size").value;
+    if (type == "") {
+        isValid = false;
+        let errorsDocumented = document.createElement("p");
+        errorsDocumented.innerText = "Please choose a reptile size";
+    }
+    let venomous = getByID("venomous").value;
+    if (venomous == "") {
+        isValid = false;
+        let errorsDocumented = document.createElement("p");
+        errorsDocumented.innerText = "Please select a level of venomsity";
+    }
+    return isValid;
+}
+   
