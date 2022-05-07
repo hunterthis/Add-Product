@@ -59,9 +59,11 @@ myReptile.name = "Godzilla";
 //  VALIDATION CODE*********************************** 
 function isAllDataValid() {
     let isValid = true;
-    let name = getByID("Name").value;
+
+    let inputName = <HTMLInputElement>getByID("Name");
+    let inName = inputName.value;
     
-    if (name == "") {
+    if (inName == "") {
         isValid = false;
         let errorsDocumented = document.createElement("p");
         errorsDocumented.innerText = "Please name a lizard";
