@@ -76,13 +76,15 @@ function isAllDataValid() {
         errorsDocumented.innerText = "How many lizards would you like?";
     }
 
-    let type = getByID("size").value;
-    if (type == "") {
+    let size = <HTMLInputElement>getByID("size");
+    let sizeLizard = size.value;
+    if (sizeLizard == "") {
         isValid = false;
         let errorsDocumented = document.createElement("p");
         errorsDocumented.innerText = "Please choose a reptile size";
     }
-    let venomous = getByID("venomous").value;
+    let venomous = getByID("venomous")
+    let venomousQual = venomous.value;
     if (venomous == "") {
         isValid = false;
         let errorsDocumented = document.createElement("p");
